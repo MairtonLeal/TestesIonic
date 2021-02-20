@@ -6,15 +6,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [class.newBG]="state">
+  <ion-button (click)="mostrarDate()">
+    teste date {{date}}
+  </ion-button>
+  <button ion-button outline (click)="screenShot()">Screenshot (PIC)</button>
+  <button ion-button outline (click)="screenShotURI()">Screenshot (URI)</button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <img src="{{ screen }}" *ngIf="state">
+  <ion-button (click)="addCustomTask()">
+    teste
+  </ion-button>
 </ion-content>
